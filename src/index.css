@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: autumn --default;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url("./assets/fonts/Shabnam.ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-shabnam: Shabnam, sans-serif;
+}
+
+:root {
+  direction: rtl;
+}

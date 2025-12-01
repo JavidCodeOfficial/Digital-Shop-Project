@@ -1,4 +1,4 @@
-import type { ProductsType } from "../data/products";
+import type { Product } from "../store/useProductStore";
 import Utils from "../utils/Utils";
 import { motion } from "motion/react";
 
@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 // Props
 type Props = {
-  product: ProductsType;
+  product: Product;
   index: number;
 };
 

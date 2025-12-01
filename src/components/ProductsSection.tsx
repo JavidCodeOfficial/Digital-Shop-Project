@@ -1,13 +1,19 @@
 import { ArrowLeft } from "lucide-react";
-import { products, type ProductsType } from "../data/products";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-
+import { useProductStore } from "../store/useProductStore";
+import { useEffect } from "react";
 // طراحی کامپوننت قسمت نمایش محصولات در صفحه اصلی
 
 function ProductsSection() {
-  const MotionLink = motion(Link); //تعریف Link برای motion
+  const MotionLink = motion.create(Link); //تعریف Link برای motion
+
+  const { products, loading, error, fetchProducts } = useProductStore();
+
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
 
   return (
     <div
@@ -65,12 +71,21 @@ function ProductsSection() {
         </div>
         <div className="divider"></div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Product Card */}
-        {products.slice(0, 9).map((product: ProductsType, index: number) => (
-          <ProductCard key={product.id} product={product} index={index} />
-        ))}
-      </div>
+
+      {error && <div className="alert alert-error mb-8">مشکلی پیش آمد!</div>}
+
+      {loading ? (
+        <div className="flex justify-center items-center h-64">
+          <div className="loading loading-spinner loading-lg" />
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Product Card */}
+          {products.slice(0, 9).map((product, index: number) => (
+            <ProductCard key={product.id} product={product} index={index} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

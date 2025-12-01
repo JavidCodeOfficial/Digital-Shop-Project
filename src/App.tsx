@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Products from "./pages/Products";
 import ScrollToTop from "./components/ScrollToUp";
+import { Toaster } from "react-hot-toast";
 
 // فایل اصلی وبسایت
 // این فایل شامل Header, Footer و Routes است
@@ -26,6 +27,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
       </Routes>
+
+      <Toaster />
 
       {/* Footer */}
       <Footer />

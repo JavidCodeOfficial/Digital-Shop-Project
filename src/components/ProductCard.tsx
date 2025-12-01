@@ -27,7 +27,7 @@ function ProductCard(props: Props) {
       {/* Image */}
       <figure className="relative pt-[56.25%]">
         <img
-          src={props.product.image}
+          src={props.product.image[0]}
           alt={props.product.name}
           className="absolute top-0 left-0 w-full h-full object-cover"
         />

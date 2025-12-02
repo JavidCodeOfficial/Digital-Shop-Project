@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { useAuthStore } from "../store/useAuthStore";
+import { useEffect } from "react";
 
 // طراحی هدر وبسایت
 
 function Header() {
+  const { user, error, getUser } = useAuthStore();
+
+  useEffect(() => {
+    getUser();
+  }, [getUser]);
+
   return (
     <div className="flex justify-between navbar bg-base-100 shadow-sm h-20 md:px-10  overflow-hidden">
       <div className="dropdown relative">
@@ -66,50 +74,87 @@ function Header() {
           <li className="w-32 py-1">
             <a href="#">پروفایل</a>
           </li>
+          <li
+            className={`border-t border-2 my-1 ${user != null ? "hidden" : ""}`}
+          ></li>
+
+          <li className="w-32 py-1">
+            <div className={`btn btn-accent ${user != null ? "hidden" : ""}`}>
+              <Link to="/login">ورود / ثبت نام</Link>
+            </div>
+          </li>
         </ul>
 
+        {error && <div className="alert alert-error mb-8">مشکلی پیش آمد!</div>}
+
         {/* Svg section */}
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-          }}
-          viewport={{ once: true }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 25,
-            repeat: 0,
-            ease: "easeIn",
-            duration: 3,
-            delay: 0.3,
-          }}
-          role="button"
-          className="btn btn-ghost btn-circle"
-        >
-          <div className="indicator">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              />{" "}
-            </svg>
-            <span className="badge badge-sm indicator-item badge-primary pt-[3px]">
-              8
-            </span>
-          </div>
-        </motion.div>
+        {user == null ? (
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 25,
+              repeat: 0,
+              ease: "easeIn",
+              duration: 3,
+              delay: 0.3,
+            }}
+            className={`btn btn-accent ${
+              user != null ? "hidden" : "hidden lg:flex"
+            } `}
+          >
+            <Link to="/login">ورود / ثبت نام</Link>
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 25,
+              repeat: 0,
+              ease: "easeIn",
+              duration: 3,
+              delay: 0.3,
+            }}
+            role="button"
+            className="btn btn-ghost btn-circle"
+          >
+            <div className="indicator">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {" "}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />{" "}
+              </svg>
+              <span className="badge badge-sm indicator-item badge-primary pt-[3px]">
+                8
+              </span>
+            </div>
+          </motion.div>
+        )}
       </div>
       <div className="hidden lg:flex bg-base-200 rounded-2xl">
         {/* Navigation in lg screen */}

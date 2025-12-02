@@ -64,7 +64,7 @@ function Descriptions() {
             دیجیتال مانند قاب، شارژر، پاوربانک و کابل تجهیزات صوتی شامل هدفون،
             اسپیکر و ایرپاد گجت‌های هوشمند و جذاب...
           </p>
-          <Link to="/about" className="btn btn-primary">
+          <Link to="/about" className="btn btn-accent">
             ادامه مطلب...
           </Link>
         </motion.div>

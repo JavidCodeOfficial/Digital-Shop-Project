@@ -257,7 +257,7 @@ function About() {
         className="mt-6 flex items-center justify-between"
       >
         <Link
-          to="/"
+          to="/products"
           className="inline-block btn btn-primary px-4 py-2 rounded-lg shadow hover:opacity-95"
         >
           دیدن محصولات

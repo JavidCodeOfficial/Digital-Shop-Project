@@ -28,10 +28,12 @@ export const useProductStore = create<ProductState>((set) => ({
 
     try {
       const { data } = await supabase.from("products").select();
+
       if (data) set({ products: data, error: null });
     } catch (error) {
       toast.error("مشکلی رخ داد!");
       set({ error: "Error fetching products: " + error, products: [] });
+      return;
     } finally {
       set({ loading: false });
     }

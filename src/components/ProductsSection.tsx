@@ -41,6 +41,7 @@ function ProductsSection() {
               duration: 3,
               delay: 0.2,
             }}
+            className="text-accent-content"
           >
             دیدن همه محصولات
           </motion.h1>
@@ -63,7 +64,7 @@ function ProductsSection() {
               duration: 3,
               delay: 0.2,
             }}
-            className="btn btn-circle"
+            className="btn btn-circle btn-accent"
             title="go to products"
           >
             <ArrowLeft />

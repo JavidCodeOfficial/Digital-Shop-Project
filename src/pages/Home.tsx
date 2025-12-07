@@ -9,9 +9,9 @@ function Home() {
   return (
     <div>
       <Hero />
-      <Descriptions />
-      <Categories />
       <ProductsSection />
+      <Categories />
+      <Descriptions />
     </div>
   );
 }

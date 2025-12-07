@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 function Descriptions() {
   return (
-    <div className="hero bg-base-200 py-8 overflow-x-hidden">
+    <div className="hero bg-base-100 py-8 overflow-x-hidden">
       <div className="hero-content max-w-4xl flex-col-reverse lg:flex-row-reverse gap-10">
         {/* Image Section */}
         <motion.img

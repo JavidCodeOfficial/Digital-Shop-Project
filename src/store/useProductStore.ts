@@ -16,6 +16,7 @@ interface ProductState {
   loading: boolean;
   error: null | string;
   fetchProducts: () => Promise<void>;
+  fetchProduct: (id: number) => Promise<void>;
 }
 
 export const useProductStore = create<ProductState>((set) => ({
@@ -30,6 +31,26 @@ export const useProductStore = create<ProductState>((set) => ({
       const { data } = await supabase.from("products").select();
 
       if (data) set({ products: data, error: null });
+    } catch (error) {
+      toast.error("مشکلی رخ داد!");
+      set({ error: "Error fetching products: " + error, products: [] });
+      return;
+    } finally {
+      set({ loading: false });
+    }
+  },
+
+  fetchProduct: async (id: number) => {
+    set({ loading: true });
+
+    try {
+      const { data } = await supabase
+        .from("products")
+        .select()
+        .eq("id", id)
+        .single();
+
+      if (data) set({ products: [data], error: null });
     } catch (error) {
       toast.error("مشکلی رخ داد!");
       set({ error: "Error fetching products: " + error, products: [] });

@@ -14,6 +14,11 @@ interface AuthState {
     password: string,
     navigate: NavigateFunction
   ) => Promise<void>;
+  register: (
+    email: string,
+    password: string,
+    navigate: NavigateFunction
+  ) => Promise<void>;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -69,6 +74,31 @@ export const useAuthStore = create<AuthState>((set) => ({
       toast.error("مشکلی رخ داد!");
       set({ error: String(error), user: null });
       return;
+    } finally {
+      set({ loading: false });
+    }
+  },
+
+  register: async (email, password, navigate) => {
+    set({ loading: true });
+
+    try {
+      if (!email || !password) {
+        toast.error("لطفا ایمیل و رمز عبور را وارد کنید!");
+        set({ loading: false, error: "لطفا ایمیل و رمز عبور را وارد کنید!" });
+        return;
+      }
+
+      const { data } = await supabase.auth.signUp({
+        email: email!,
+        password: password!,
+      });
+
+      set({ user: data.user, error: null });
+      navigate("/");
+    } catch (error) {
+      toast.error("مشکلی رخ داد!");
+      set({ error: String(error), user: null });
     } finally {
       set({ loading: false });
     }

@@ -8,6 +8,7 @@ import ScrollToTop from "./components/ScrollToUp";
 import { Toaster } from "react-hot-toast";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Details from "./pages/Details";
 
 // فایل اصلی وبسایت
 // این فایل شامل Header, Footer و Routes است
@@ -16,7 +17,7 @@ import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="font-shabnam min-h-screen flex flex-col">
+    <div className="font-shabnam min-h-screen flex flex-col bg-base-200">
       {/* ScrollToTop برای رفتن به بالا استفاده می‌شود */}
       <ScrollToTop />
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/products/:id" element={<Details />} />
         </Routes>
       </div>
 

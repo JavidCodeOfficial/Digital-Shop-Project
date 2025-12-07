@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 function About() {
   return (
     // بخش اصلی صفحه
-    <section className="max-w-4xl mx-auto p-6 sm:p-10 lg:rounded-2xl shadow-md lg:my-10 bg-base-200">
+    <section className="max-w-4xl mx-auto p-6 sm:p-10 lg:rounded-2xl shadow-md lg:my-10 bg-base-200 lg:bg-base-100">
       <motion.header
         initial={{
           opacity: 0,

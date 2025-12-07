@@ -4,7 +4,7 @@ import { useAuthStore } from "../store/useAuthStore";
 import { useEffect } from "react";
 
 function Header() {
-  const { user, error, getUser } = useAuthStore();
+  const { user, loading, error, getUser } = useAuthStore();
 
   useEffect(() => {
     getUser();
@@ -48,7 +48,7 @@ function Header() {
             delay: 0.3,
           }}
           role="button"
-          className="btn btn-ghost btn-circle"
+          className="btn btn-ghost btn-circle hidden lg:flex"
         >
           <div className="indicator">
             <svg
@@ -74,7 +74,7 @@ function Header() {
       )}
 
       {/* CENTER SECTION — Dropdown + LG Menu */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center">
         {/* MOBILE DROPDOWN BUTTON */}
         <div className="dropdown lg:hidden relative">
           <motion.div
@@ -147,6 +147,50 @@ function Header() {
 
           {error && (
             <div className="alert alert-error mb-8">مشکلی پیش آمد!</div>
+          )}
+
+          {loading ? (
+            <div className="loading loading-spinner loading-sm mr-2" />
+          ) : (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 25,
+                repeat: 0,
+                ease: "easeIn",
+                duration: 3,
+                delay: 0.3,
+              }}
+              role="button"
+              className={`btn btn-ghost btn-circle mr-2 ${
+                user == null ? "hidden" : "lg:hidden"
+              }`}
+            >
+              <div className="indicator">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0
+                  0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <span className="badge badge-sm indicator-item badge-primary pt-[3px]">
+                  8
+                </span>
+              </div>
+            </motion.div>
           )}
         </div>
 

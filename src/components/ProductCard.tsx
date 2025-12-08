@@ -18,7 +18,6 @@ function ProductCard(props: Props) {
         key={props.product.id}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        viewport={{ once: true }}
         transition={{
           ease: "easeIn",
           duration: 1,

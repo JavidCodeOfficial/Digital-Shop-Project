@@ -16,7 +16,6 @@ function About() {
           opacity: 1,
           y: 0,
         }}
-        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 100,
@@ -45,7 +44,6 @@ function About() {
             opacity: 1,
             y: 0,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -80,7 +78,6 @@ function About() {
             opacity: 1,
             y: 0,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -109,7 +106,6 @@ function About() {
             opacity: 1,
             y: 0,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -142,7 +138,6 @@ function About() {
             opacity: 1,
             y: 0,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -169,7 +164,6 @@ function About() {
             opacity: 1,
             y: 0,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -213,7 +207,6 @@ function About() {
             opacity: 1,
             y: 0,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -244,7 +237,6 @@ function About() {
           opacity: 1,
           y: 0,
         }}
-        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 100,
@@ -258,7 +250,7 @@ function About() {
       >
         <Link
           to="/products"
-          className="inline-block btn btn-primary px-4 py-2 rounded-lg shadow hover:opacity-95"
+          className="inline-block btn btn-accent px-4 py-2 rounded-lg shadow hover:opacity-95"
         >
           دیدن محصولات
         </Link>

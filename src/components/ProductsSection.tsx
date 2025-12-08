@@ -30,7 +30,6 @@ function ProductsSection() {
             animate={{
               opacity: 1,
             }}
-            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 100,
@@ -51,7 +50,6 @@ function ProductsSection() {
             animate={{
               opacity: 1,
             }}
-            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 100,

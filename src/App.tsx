@@ -17,7 +17,7 @@ import Details from "./pages/Details";
 
 function App() {
   return (
-    <div className="font-shabnam min-h-screen flex flex-col bg-base-200">
+    <div className="font-shabnam min-h-screen flex flex-col bg-base-200 pt-20">
       {/* ScrollToTop برای رفتن به بالا استفاده می‌شود */}
       <ScrollToTop />
 

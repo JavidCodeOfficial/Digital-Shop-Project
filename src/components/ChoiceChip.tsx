@@ -27,7 +27,6 @@ export default function ChoiceChip({
       animate={{
         opacity: 1,
       }}
-      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 100,

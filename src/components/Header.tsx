@@ -11,13 +11,12 @@ function Header() {
   }, [getUser]);
 
   return (
-    <div className="navbar bg-base-100 shadow-sm h-20 md:px-10 flex justify-between overflow-hidden">
+    <div className="navbar fixed top-0 left-0 right-0 z-50 bg-base-100 shadow-sm h-20 md:px-10 flex justify-between overflow-hidden">
       {/* RIGHT SECTION — Login OR Cart */}
       {user == null ? (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -38,7 +37,6 @@ function Header() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 100,
@@ -76,7 +74,6 @@ function Header() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 100,
@@ -104,7 +101,6 @@ function Header() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 100,
@@ -187,7 +183,6 @@ function Header() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -232,7 +227,6 @@ function Header() {
             <motion.li
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -249,7 +243,6 @@ function Header() {
             <motion.li
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -266,7 +259,6 @@ function Header() {
             <motion.li
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -283,7 +275,6 @@ function Header() {
             <motion.li
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -300,7 +291,6 @@ function Header() {
             <motion.li
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -321,7 +311,6 @@ function Header() {
       <motion.a
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 100,

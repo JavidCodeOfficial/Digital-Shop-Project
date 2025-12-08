@@ -14,7 +14,6 @@ function Footer() {
           animate={{
             opacity: 1,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -49,7 +48,6 @@ function Footer() {
           animate={{
             opacity: 1,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -75,7 +73,6 @@ function Footer() {
           animate={{
             opacity: 1,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -101,7 +98,6 @@ function Footer() {
           animate={{
             opacity: 1,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -128,7 +124,6 @@ function Footer() {
           animate={{
             opacity: 1,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -183,7 +178,6 @@ function Footer() {
           animate={{
             opacity: 1,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,

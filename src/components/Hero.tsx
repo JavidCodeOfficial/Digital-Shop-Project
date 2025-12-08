@@ -16,17 +16,14 @@ function Hero() {
   };
 
   return (
-    <div
-      className="hero min-h-[50vh] bg-base-200"
-      style={{ backgroundImage: "url('/images/hero.webp')" }}
-    >
+    <div className="hero min-h-[50vh] bg-base-200 bg-[url('/hero.webp')]">
       {/* Overlay */}
       <div className="hero-overlay"></div>
 
       {/* Content */}
       <div
         className={`hero-content text-neutral-content text-center ${
-          ready ? "backdrop-blur-2xl" : ""
+          ready ? "backdrop-blur-xl" : ""
         } `}
       >
         <div className="max-w-2xl">

@@ -15,7 +15,6 @@ function Descriptions() {
           animate={{
             opacity: 1,
           }}
-          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 100,
@@ -47,7 +46,6 @@ function Descriptions() {
             duration: 3,
             delay: 1.1,
           }}
-          viewport={{ once: true }}
         >
           <h1 className="text-5xl font-bold">درباره فروشگاه ما</h1>
           <p className="py-6 leading-loose">

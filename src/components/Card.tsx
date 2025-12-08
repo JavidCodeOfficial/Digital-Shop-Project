@@ -17,7 +17,6 @@ function Card(props: Props) {
       animate={{
         opacity: 1,
       }}
-      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 50,

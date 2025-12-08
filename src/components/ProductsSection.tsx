@@ -26,11 +26,9 @@ function ProductsSection() {
           <motion.h1
             initial={{
               opacity: 0,
-              x: 80,
             }}
-            whileInView={{
+            animate={{
               opacity: 1,
-              x: 0,
             }}
             viewport={{ once: true }}
             transition={{
@@ -49,11 +47,9 @@ function ProductsSection() {
             to="/products"
             initial={{
               opacity: 0,
-              x: 80,
             }}
-            whileInView={{
+            animate={{
               opacity: 1,
-              x: 0,
             }}
             viewport={{ once: true }}
             transition={{

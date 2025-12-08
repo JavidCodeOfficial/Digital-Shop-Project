@@ -10,11 +10,9 @@ function Footer() {
         <motion.form
           initial={{
             opacity: 0,
-            y: -100,
           }}
-          whileInView={{
+          animate={{
             opacity: 1,
-            y: 0,
           }}
           viewport={{ once: true }}
           transition={{
@@ -47,11 +45,9 @@ function Footer() {
         <motion.nav
           initial={{
             opacity: 0,
-            y: -100,
           }}
-          whileInView={{
+          animate={{
             opacity: 1,
-            y: 0,
           }}
           viewport={{ once: true }}
           transition={{
@@ -75,11 +71,9 @@ function Footer() {
         <motion.nav
           initial={{
             opacity: 0,
-            y: -100,
           }}
-          whileInView={{
+          animate={{
             opacity: 1,
-            y: 0,
           }}
           viewport={{ once: true }}
           transition={{
@@ -103,11 +97,9 @@ function Footer() {
         <motion.nav
           initial={{
             opacity: 0,
-            y: -100,
           }}
-          whileInView={{
+          animate={{
             opacity: 1,
-            y: 0,
           }}
           viewport={{ once: true }}
           transition={{
@@ -133,7 +125,7 @@ function Footer() {
           initial={{
             opacity: 0,
           }}
-          whileInView={{
+          animate={{
             opacity: 1,
           }}
           viewport={{ once: true }}
@@ -188,7 +180,7 @@ function Footer() {
           initial={{
             opacity: 0,
           }}
-          whileInView={{
+          animate={{
             opacity: 1,
           }}
           viewport={{ once: true }}

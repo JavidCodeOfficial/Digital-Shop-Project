@@ -16,7 +16,7 @@ function Header() {
       {user == null ? (
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{
             type: "spring",
@@ -36,7 +36,7 @@ function Header() {
       ) : (
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{
             type: "spring",
@@ -79,7 +79,7 @@ function Header() {
         <div className="dropdown lg:hidden relative">
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{
               type: "spring",
@@ -154,7 +154,7 @@ function Header() {
           ) : (
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
@@ -199,7 +199,7 @@ function Header() {
           <motion.ul className="menu menu-horizontal px-1">
             <motion.li
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
@@ -216,7 +216,7 @@ function Header() {
 
             <motion.li
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
@@ -233,7 +233,7 @@ function Header() {
 
             <motion.li
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
@@ -250,7 +250,7 @@ function Header() {
 
             <motion.li
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
@@ -267,7 +267,7 @@ function Header() {
 
             <motion.li
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
@@ -288,7 +288,7 @@ function Header() {
       {/* RIGHT SECTION — Logo */}
       <motion.a
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{
           type: "spring",

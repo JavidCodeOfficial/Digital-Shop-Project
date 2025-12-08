@@ -23,11 +23,9 @@ function Hero() {
           <motion.h1
             initial={{
               opacity: 0,
-              y: 80,
             }}
             animate={{
               opacity: 1,
-              y: 0,
             }}
             transition={{
               type: "spring",
@@ -45,11 +43,9 @@ function Hero() {
           <motion.p
             initial={{
               opacity: 0,
-              y: 80,
             }}
             animate={{
               opacity: 1,
-              y: 0,
             }}
             transition={{
               type: "spring",
@@ -68,11 +64,9 @@ function Hero() {
           <motion.button
             initial={{
               opacity: 0,
-              y: 80,
             }}
             animate={{
               opacity: 1,
-              y: 0,
             }}
             transition={{
               type: "spring",

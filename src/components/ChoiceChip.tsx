@@ -46,7 +46,7 @@ export default function ChoiceChip({
           className={`px-7 py-3 rounded-full text-sm border transition
             ${
               selected === item
-                ? "bg-accent text-accent-content border-accent"
+                ? "bg-primary text-primary-content border-accent"
                 : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
             }
           `}

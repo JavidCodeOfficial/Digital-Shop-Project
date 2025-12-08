@@ -1,4 +1,3 @@
-import heroImage from "../assets/images/hero.jpg"; // adjust path as needed
 import { motion } from "motion/react";
 
 //  طراحی هیرو وبسسایت در صفحه اصلی
@@ -12,7 +11,7 @@ function Hero() {
   return (
     <div
       className="hero min-h-[50vh] bg-base-200"
-      style={{ backgroundImage: `url(${heroImage})` }}
+      style={{ backgroundImage: "url('/images/hero.webp')" }}
     >
       {/* Overlay */}
       <div className="hero-overlay"></div>

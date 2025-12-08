@@ -40,10 +40,10 @@ function ProductCard(props: Props) {
           <h2 className="card-title line-clamp-1">{props.product.name}</h2>
 
           {/* Description */}
-          <p className="line-clamp-2">{props.product.description}</p>
+          <p className="line-clamp-1">{props.product.description}</p>
 
           {/* Price */}
-          <p className="line-clamp-2">
+          <p className="line-clamp-1">
             {Utils.formatCurrency(props.product.price)}
           </p>
 

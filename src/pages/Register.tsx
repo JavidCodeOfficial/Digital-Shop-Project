@@ -63,7 +63,7 @@ function Register() {
 
         <button
           type="submit"
-          className="btn btn-neutral mt-4"
+          className="btn btn-accent mt-4"
           disabled={loading}
           onClick={handleRegister}
         >
@@ -91,10 +91,7 @@ function Register() {
           </ul>
         </div>
 
-        <Link
-          to="/register"
-          className="btn btn-outline btn-primary mt-3 w-full"
-        >
+        <Link to="/login" className="btn btn-outline btn-primary mt-3 w-full">
           همین حالا وارد شوید
         </Link>
       </aside>

@@ -67,7 +67,7 @@ export default function Login() {
 
         <button
           type="submit"
-          className="btn btn-neutral mt-4"
+          className="btn btn-accent mt-4"
           disabled={loading}
           onClick={handleLogin}
         >

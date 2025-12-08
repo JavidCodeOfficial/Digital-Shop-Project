@@ -19,6 +19,7 @@ interface AuthState {
     password: string,
     navigate: NavigateFunction
   ) => Promise<void>;
+  logout: () => Promise<void>;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -96,9 +97,25 @@ export const useAuthStore = create<AuthState>((set) => ({
 
       set({ user: data.user, error: null });
       navigate("/");
+      toast.success("خوش آمدید");
     } catch (error) {
       toast.error("مشکلی رخ داد!");
       set({ error: String(error), user: null });
+    } finally {
+      set({ loading: false });
+    }
+  },
+
+  logout: async () => {
+    set({ loading: true });
+
+    try {
+      await supabase.auth.signOut();
+      set({ user: null, error: null });
+    } catch (error) {
+      toast.error("مشکلی رخ داد!");
+      set({ error: String(error), user: null });
+      return;
     } finally {
       set({ loading: false });
     }

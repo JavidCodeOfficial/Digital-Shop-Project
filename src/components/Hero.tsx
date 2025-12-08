@@ -1,7 +1,14 @@
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 //  طراحی هیرو وبسسایت در صفحه اصلی
 function Hero() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setReady(true), 200);
+  }, []);
+
   // اسکرول به قسمت محصولات
   const handleScroll = () => {
     const section = document.getElementById("product-cards");
@@ -17,7 +24,11 @@ function Hero() {
       <div className="hero-overlay"></div>
 
       {/* Content */}
-      <div className="hero-content text-neutral-content text-center backdrop-blur-2xl">
+      <div
+        className={`hero-content text-neutral-content text-center ${
+          ready ? "backdrop-blur-2xl" : ""
+        } `}
+      >
         <div className="max-w-2xl">
           <motion.h1
             initial={{

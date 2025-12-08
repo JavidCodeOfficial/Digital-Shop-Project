@@ -4,7 +4,7 @@ import { useAuthStore } from "../store/useAuthStore";
 import { useEffect } from "react";
 
 function Header() {
-  const { user, loading, error, getUser } = useAuthStore();
+  const { user, loading, error, getUser, logout } = useAuthStore();
 
   useEffect(() => {
     getUser();
@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <div className="navbar bg-base-100 shadow-sm h-20 md:px-10 flex justify-between overflow-hidden">
-      {/* LEFT SECTION — Login OR Cart */}
+      {/* RIGHT SECTION — Login OR Cart */}
       {user == null ? (
         <motion.div
           initial={{ opacity: 0 }}
@@ -34,43 +34,67 @@ function Header() {
           <Link to="/login">ورود / ثبت نام</Link>
         </motion.div>
       ) : (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 25,
-            repeat: 0,
-            ease: "easeIn",
-            duration: 3,
-            delay: 0.3,
-          }}
-          role="button"
-          className="btn btn-ghost btn-circle hidden lg:flex"
-        >
-          <div className="indicator">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0
+        <div className="flex-row hidden lg:flex gap-3">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 25,
+              repeat: 0,
+              ease: "easeIn",
+              duration: 3,
+              delay: 0.3,
+            }}
+            role="button"
+            className="btn btn-ghost btn-circle"
+          >
+            <div className="indicator">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0
                   0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-            </svg>
-            <span className="badge badge-sm indicator-item badge-primary pt-[3px]">
-              8
-            </span>
-          </div>
-        </motion.div>
+                />
+              </svg>
+              <span className="badge badge-sm indicator-item badge-primary pt-[3px]">
+                8
+              </span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 25,
+              repeat: 0,
+              ease: "easeIn",
+              duration: 3,
+              delay: 0.3,
+            }}
+            className={`btn btn-error btn-outline ${
+              user == null ? "hidden" : ""
+            }`}
+          >
+            <button type="submit" disabled={loading} onClick={logout}>
+              {loading ? "درحال خروج..." : "خروج از حساب"}
+            </button>
+          </motion.div>
+        </div>
       )}
 
       {/* CENTER SECTION — Dropdown + LG Menu */}
@@ -132,15 +156,23 @@ function Header() {
               <a>پروفایل</a>
             </li>
 
-            <li
-              className={`border-t border-2 my-1 ${
-                user != null ? "hidden" : ""
-              }`}
-            ></li>
+            <li className="border-t border-2 my-1"></li>
 
             <li className="w-32 py-1">
               <div className={`btn btn-accent ${user != null ? "hidden" : ""}`}>
                 <Link to="/login">ورود / ثبت نام</Link>
+              </div>
+            </li>
+
+            <li className="w-32 py-1">
+              <div
+                className={`btn btn-error btn-outline ${
+                  user == null ? "hidden" : ""
+                }`}
+              >
+                <button type="submit" disabled={loading} onClick={logout}>
+                  {loading ? "درحال خروج..." : "خروج از حساب"}
+                </button>
               </div>
             </li>
           </ul>
@@ -285,7 +317,7 @@ function Header() {
         </div>
       </div>
 
-      {/* RIGHT SECTION — Logo */}
+      {/* LEFT SECTION — Logo */}
       <motion.a
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

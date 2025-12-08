@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Details from "./pages/Details";
+import Cart from "./pages/Cart";
 
 // فایل اصلی وبسایت
 // این فایل شامل Header, Footer و Routes است
@@ -33,6 +34,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/products/:id" element={<Details />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
 

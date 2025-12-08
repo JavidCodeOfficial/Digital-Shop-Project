@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { useAuthStore } from "../store/useAuthStore";
 import { useEffect } from "react";
+import { useCartStore } from "../store/useCartStore";
 
 function Header() {
   const { user, loading, error, getUser, logout } = useAuthStore();
+  const { cart } = useCartStore();
+
+  const cartCount = cart.length;
 
   useEffect(() => {
     getUser();
@@ -49,7 +53,7 @@ function Header() {
             role="button"
             className="btn btn-ghost btn-circle"
           >
-            <div className="indicator">
+            <Link to="/cart" className="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -66,9 +70,9 @@ function Header() {
                 />
               </svg>
               <span className="badge badge-sm indicator-item badge-primary pt-[3px]">
-                8
+                {cartCount}
               </span>
-            </div>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -197,7 +201,7 @@ function Header() {
                 user == null ? "hidden" : "lg:hidden"
               }`}
             >
-              <div className="indicator">
+              <Link to="/cart" className="indicator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -214,9 +218,9 @@ function Header() {
                   />
                 </svg>
                 <span className="badge badge-sm indicator-item badge-primary pt-[3px]">
-                  8
+                  {cartCount}
                 </span>
-              </div>
+              </Link>
             </motion.div>
           )}
         </div>

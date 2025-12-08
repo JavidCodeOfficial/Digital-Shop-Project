@@ -20,7 +20,7 @@ function Footer() {
             damping: 25,
             repeat: 0,
             ease: "easeIn",
-            duration: 3,
+            duration: 0.8,
             delay: 0.2,
           }}
         >
@@ -54,8 +54,8 @@ function Footer() {
             damping: 25,
             repeat: 0,
             ease: "easeIn",
-            duration: 3,
-            delay: 0.6,
+            duration: 0.8,
+            delay: 0.4,
           }}
         >
           <h6 className="footer-title">سرویس ها</h6>
@@ -79,8 +79,8 @@ function Footer() {
             damping: 25,
             repeat: 0,
             ease: "easeIn",
-            duration: 3,
-            delay: 1.0,
+            duration: 0.8,
+            delay: 0.8,
           }}
         >
           <h6 className="footer-title">کمپانی</h6>
@@ -104,8 +104,8 @@ function Footer() {
             damping: 25,
             repeat: 0,
             ease: "easeIn",
-            duration: 3,
-            delay: 1.4,
+            duration: 0.8,
+            delay: 1.2,
           }}
         >
           <h6 className="footer-title">قوانین</h6>
@@ -130,8 +130,8 @@ function Footer() {
             damping: 25,
             repeat: 0,
             ease: "easeIn",
-            duration: 3,
-            delay: 1.6,
+            duration: 0.8,
+            delay: 1.4,
           }}
           className="grid-flow-col gap-4 md:place-self-center md:justify-self-start"
         >
@@ -184,8 +184,8 @@ function Footer() {
             damping: 25,
             repeat: 0,
             ease: "easeIn",
-            duration: 3,
-            delay: 1.6,
+            duration: 0.8,
+            delay: 1.4,
           }}
           className="grid-flow-col items-center md:place-self-center md:justify-self-end"
         >

@@ -35,7 +35,7 @@ function ProductsSection() {
               stiffness: 100,
               damping: 25,
               repeat: 0,
-              duration: 3,
+              duration: 0.8,
               delay: 0.2,
             }}
             className="text-accent-content"
@@ -55,7 +55,7 @@ function ProductsSection() {
               stiffness: 100,
               damping: 25,
               repeat: 0,
-              duration: 3,
+              duration: 0.8,
               delay: 0.2,
             }}
             className="btn btn-circle btn-accent"

@@ -18,3 +18,9 @@
 :root {
   direction: rtl;
 }
+
+.hero-bg {
+  background-image: url("/hero.webp");
+  background-size: cover;
+  background-position: center;
+}

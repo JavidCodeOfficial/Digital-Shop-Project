@@ -23,7 +23,7 @@ function Header() {
             damping: 25,
             repeat: 0,
             ease: "easeIn",
-            duration: 3,
+            duration: 0.8,
             delay: 0.3,
           }}
           className={`btn btn-accent ${
@@ -43,7 +43,7 @@ function Header() {
               damping: 25,
               repeat: 0,
               ease: "easeIn",
-              duration: 3,
+              duration: 0.8,
               delay: 0.3,
             }}
             role="button"
@@ -80,7 +80,7 @@ function Header() {
               damping: 25,
               repeat: 0,
               ease: "easeIn",
-              duration: 3,
+              duration: 0.8,
               delay: 0.3,
             }}
             className={`btn btn-error btn-outline ${
@@ -107,7 +107,7 @@ function Header() {
               damping: 25,
               repeat: 0,
               ease: "easeIn",
-              duration: 3,
+              duration: 0.8,
               delay: 0.3,
             }}
             title="navigation"
@@ -189,7 +189,7 @@ function Header() {
                 damping: 25,
                 repeat: 0,
                 ease: "easeIn",
-                duration: 3,
+                duration: 0.8,
                 delay: 0.3,
               }}
               role="button"
@@ -233,7 +233,7 @@ function Header() {
                 damping: 25,
                 repeat: 0,
                 ease: "easeIn",
-                duration: 3,
+                duration: 0.8,
                 delay: 0.3,
               }}
             >
@@ -249,7 +249,7 @@ function Header() {
                 damping: 25,
                 repeat: 0,
                 ease: "easeIn",
-                duration: 3,
+                duration: 0.8,
                 delay: 0.4,
               }}
             >
@@ -265,7 +265,7 @@ function Header() {
                 damping: 25,
                 repeat: 0,
                 ease: "easeIn",
-                duration: 3,
+                duration: 0.8,
                 delay: 0.5,
               }}
             >
@@ -281,7 +281,7 @@ function Header() {
                 damping: 25,
                 repeat: 0,
                 ease: "easeIn",
-                duration: 3,
+                duration: 0.8,
                 delay: 0.6,
               }}
             >
@@ -297,7 +297,7 @@ function Header() {
                 damping: 25,
                 repeat: 0,
                 ease: "easeIn",
-                duration: 3,
+                duration: 0.8,
                 delay: 0.7,
               }}
             >
@@ -317,7 +317,7 @@ function Header() {
           damping: 25,
           repeat: 0,
           ease: "easeIn",
-          duration: 3,
+          duration: 0.8,
           delay: 0.3,
         }}
         className="btn btn-ghost text-lg md:text-xl text-primary pt-1.5 block"

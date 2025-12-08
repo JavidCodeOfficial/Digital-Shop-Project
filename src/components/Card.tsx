@@ -23,7 +23,7 @@ function Card(props: Props) {
         damping: 25,
         repeat: 0,
         ease: "easeIn",
-        duration: 3,
+        duration: 0.8,
         delay: 0.2,
       }}
       className="card card-border border-2 flex flex-col rounded-3xl items-center justify-center space-y-4 px-5 py-6"

@@ -20,7 +20,7 @@ function ProductCard(props: Props) {
         animate={{ opacity: 1 }}
         transition={{
           ease: "easeIn",
-          duration: 1,
+          duration: 0.8,
           delay: 0.1 + props.index * 0.3,
         }}
         className="card bg-base-100 shadow-xl hover:shadow-2xl  transition-all hover:scale-105 duration-300 overflow-hidden hover:cursor-pointer"

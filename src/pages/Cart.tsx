@@ -36,7 +36,7 @@ export default function Cart() {
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                className="btn btn-sm btn-outline"
+                className="btn btn-sm btn-error"
                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
               >
                 -
@@ -44,7 +44,7 @@ export default function Cart() {
               <span>{item.quantity}</span>
               <button
                 type="button"
-                className="btn btn-sm btn-outline"
+                className="btn btn-sm btn-accent"
                 onClick={() => updateQuantity(item.id, item.quantity + 1)}
               >
                 +

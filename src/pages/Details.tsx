@@ -2,11 +2,14 @@ import { useParams } from "react-router-dom";
 import { useProductStore } from "../store/useProductStore";
 import { useEffect } from "react";
 import Utils from "../utils/Utils";
+import { useCartStore } from "../store/useCartStore";
 
 function Details() {
-  const { id } = useParams();
-
+  const { id } = useParams(); // Get the product ID from the URL
   const { products, loading, error, fetchProduct } = useProductStore();
+  const { cart, addToCart, updateQuantity } = useCartStore();
+
+  const currentItem = cart.find((item) => item.id === Number(id));
 
   useEffect(() => {
     fetchProduct(Number(id!));
@@ -95,14 +98,41 @@ function Details() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex pt-3 mx-6">
-          <button
-            type="button"
-            className="btn btn-primary btn-lg flex-1 h-14 text-lg font-semibold shadow-xl hover:brightness-110 transition-all"
-          >
-            افزودن به سبد خرید{" "}
-          </button>
-        </div>
+        {currentItem ? (
+          <div className="flex justify-center pt-3 mx-6">
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                className="btn btn-sm btn-error"
+                onClick={() =>
+                  updateQuantity(currentItem.id, currentItem.quantity - 1)
+                }
+              >
+                -
+              </button>
+              <span>{currentItem.quantity}</span>
+              <button
+                type="button"
+                className="btn btn-sm btn-accent"
+                onClick={() =>
+                  updateQuantity(currentItem.id, currentItem.quantity + 1)
+                }
+              >
+                +
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="flex pt-3 mx-6">
+            <button
+              type="button"
+              className="btn btn-primary btn-lg flex-1 h-14 text-lg font-semibold shadow-xl hover:brightness-110 transition-all"
+              onClick={() => addToCart(products[0])}
+            >
+              افزودن به سبد خرید{" "}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

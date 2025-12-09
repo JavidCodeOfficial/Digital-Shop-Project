@@ -7,12 +7,12 @@ function Hero() {
   };
 
   return (
-    <div className="relative hero min-h-[60vh] bg-base-200 overflow-hidden">
+    <div className="relative hero min-h-[40vh] bg-base-200 overflow-hidden">
       {/* Hero Image */}
       <img
         src="/hero.webp"
         alt="Hero"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute w-full h-full object-cover"
         loading="eager"
         fetchPriority="high"
       />
@@ -27,7 +27,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="mb-5 text-5xl font-bold"
+            className="mb-5 text-4xl font-bold"
           >
             خوش آمدید
           </motion.h1>
